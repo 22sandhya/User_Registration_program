@@ -18,9 +18,9 @@ public class UserRegistration {
 	}
 
 	/*
-	 * method to check last name 
+	 * method to check last name
 	 */
-	
+
 	public boolean lastName(String lastName) {
 		String regex = "^[A-Z]{1}[a-z]{4}";
 		Pattern pattern = Pattern.compile(regex);
@@ -28,6 +28,14 @@ public class UserRegistration {
 		return matcher.matches();
 	}
 
-
+	/*
+	 * method to check email address
+	 */
+	public boolean emailAddress(String email) {
+		String regex = "^[a-z0-9]{3,}+([_+-.][a-z0-9]{3,}+)*@[a-z0-9]+.[a-z]{2,3}+(.[a-z]{2,3}){0,1}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(email);
+		return matcher.matches();
+	}
 
 }
