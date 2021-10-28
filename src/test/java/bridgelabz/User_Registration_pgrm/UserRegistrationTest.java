@@ -35,7 +35,7 @@ public class UserRegistrationTest {
 	}
 
 	/*
-	 * methods to check mail addresss
+	 * methods to check mail Addresss
 	 */
 	@Test
 	public void givenEmail_WhenInFormat_ShouldReturnTrue() {
@@ -46,6 +46,21 @@ public class UserRegistrationTest {
 	@Test
 	public void givenEmail_WhenOurOfFormat_ShouldReturnFalse() {
 		boolean result = userRegistration.emailAddress("abc()*@gmail.com");
+		Assert.assertEquals(false, result);
+	}
+
+	/*
+	 * test cases for mobile number validation
+	 */
+	@Test
+	public void givenPhoneNumber_WhenInFormat_ShouldReturnTrue() {
+		boolean result = userRegistration.phoneNumber("91 9604315270");
+		Assert.assertEquals(true, result);
+	}
+
+	@Test
+	public void givenPhoneNumber_WhenOurOfFormat_ShouldReturnFlase() {
+		boolean result = userRegistration.phoneNumber("+91 9604315270");
 		Assert.assertEquals(false, result);
 	}
 
