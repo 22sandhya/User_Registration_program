@@ -3,6 +3,7 @@ package bridgelabz.User_Registration_pgrm;
 import org.junit.Assert;
 import org.junit.Test;
 
+import com.bridgelabz.User_Registration_pgrm.MoodAnalyser;
 import com.bridgelabz.User_Registration_pgrm.UserRegistration;
 
 public class UserRegistrationTest {
@@ -161,6 +162,18 @@ public class UserRegistrationTest {
 	public void givenEmail4_WhenOurOfFormat_ShouldReturnFalse() {
 		boolean result = userRegistration.emailAddressSample("aabc.@gmail.com");
 		Assert.assertEquals(false, result);
+	}
+
+	@Test
+	public void givenMessage_WhenHappy_ShouldReturnEntrySuccessful() {
+		String result = MoodAnalyser.analyseMood("I am in  Happy mood");
+		Assert.assertEquals("Entry Successful", result);
+	}
+
+	@Test
+	public void givenEmail2_WhenNotProper_ShouldReturnEntryFailed() {
+		String result = MoodAnalyser.analyseMood("I am in Sad mood");
+		Assert.assertEquals("Entry Failed", result);
 	}
 
 }
