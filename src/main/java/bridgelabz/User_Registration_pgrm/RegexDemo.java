@@ -1,4 +1,4 @@
-package com.bridgelabz.User_Registration_pgrm;
+package bridgelabz.User_Registration_pgrm;
 
 import java.util.Scanner;
 import java.util.regex.Matcher;

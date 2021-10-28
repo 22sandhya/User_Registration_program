@@ -5,8 +5,6 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 
-import com.bridgelabz.User_Registration_pgrm.EmailValidation;
-
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Collection;
