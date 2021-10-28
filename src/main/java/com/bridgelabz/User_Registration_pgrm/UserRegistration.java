@@ -48,9 +48,9 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(phoneNumber);
 		return matcher.matches();
 	}
+
 	/*
-	 * Method to check rule one minimum 8
-	 *Characters - NOTE – All rules must
+	 * Method to check rule one minimum 8 Characters - NOTE – All rules must
 	 */
 	public boolean passwordRule1(String password) {
 		String regex = "^[0-9a-zA-Z]{8,}$";
@@ -58,10 +58,10 @@ public class UserRegistration {
 		Matcher matcher = pattern.matcher(password);
 		return matcher.matches();
 	}
+
 	/*
-	 * Method to check rule one minimum 8
-	 *Should have at least 1
-	 *Upper Case - NOTE – All rules must
+	 * Method to check rule one minimum 8 Should have at least 1 Upper Case - NOTE –
+	 * All rules must
 	 */
 	public boolean passwordRule2(String password) {
 		String regex = "^[A-Z]{1}[a-z]{8,}$";
@@ -71,5 +71,15 @@ public class UserRegistration {
 
 	}
 
+	/*
+	 * Should have at least 1 numeric number in the password
+	 */
+	public boolean passwordRule3(String password) {
+		String regex = "^(?=.*[A-Z]){1}(?=.*[a-z])(?=.*[0-9]).{8,}$";
+		Pattern pattern = Pattern.compile(regex);
+		Matcher matcher = pattern.matcher(password);
+		return matcher.matches();
+
+	}
 
 }
